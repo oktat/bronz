@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>doc</h1>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+            Hozzáadás
+        </button>
+        
+        <table id="employeesTable" class="table table-striped"></table>
+    </div>
+
+  
+  <!-- Modal hozzáadás -->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Dolgozó hozzáadása</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="addForm">
+                <div>
+                    <label for="name" class="form-label">Név</label>
+                    <input type="text" id="name"
+                    class="form-control">
+                </div>
+                <div>
+                    <label for="city" class="form-label">Település</label>
+                    <input type="text" id="city"
+                    class="form-control">
+                </div>
+                <div>
+                    <label for="salary" class="form-label">Fizetés</label>
+                    <input type="text" id="salary"
+                    class="form-control">
+                </div>
+    
+            </div>
+    
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Bezár
+            </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+          id="addButton">Mentés</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Hozzáadás vége -->
+
+
+
+<!-- Modal módosítás -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Dolgozó módosítása</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="addForm">
+                <div>
+                    <label for="edited_id" class="form-label">Id</label>
+                    <input type="text" id="edited_id"
+                    class="form-control">
+                </div>
+                <div>
+                    <label for="name" class="form-label">Név</label>
+                    <input type="text" id="edited_name"
+                    class="form-control">
+                </div>
+                <div>
+                    <label for="city" class="form-label">Település</label>
+                    <input type="text" id="edited_city"
+                    class="form-control">
+                </div>
+                <div>
+                    <label for="salary" class="form-label">Fizetés</label>
+                    <input type="text" id="edited_salary"
+                    class="form-control">
+                </div>
+    
+            </div>
+    
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Bezár
+            </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+          id="saveButton">Mentés</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Módosítás vége -->
+
+    <script src="bootstrap.js"></script>
+    <script src="app.js"></script>    
+</body>
+</html>

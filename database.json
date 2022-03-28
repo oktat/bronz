@@ -1,0 +1,59 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Para Béla",
+      "city": "Szolnok",
+      "salary": "333"
+    },
+    {
+      "name": "Rendes Irén",
+      "city": "Szeged",
+      "salary": 350,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Erős István",
+      "city": "Szeged",
+      "salary": "843"
+    },
+    {
+      "id": 4,
+      "name": "Kat Ferenc",
+      "city": "Szolnok",
+      "salary": "982"
+    },
+    {
+      "name": "Pere Géza",
+      "city": "Szeged",
+      "salary": "385",
+      "id": 7
+    },
+    {
+      "name": "Torony Elemér",
+      "city": "Szolnok",
+      "salary": "839",
+      "id": 8
+    },
+    {
+      "name": "Arany Beáta",
+      "city": "Szolnok",
+      "salary": "835",
+      "id": 9
+    },
+    {
+      "name": "Kék Imre",
+      "city": "Szeged",
+      "salary": "834",
+      "id": 10
+    },
+    {
+      "name": "Part Ede",
+      "city": "Hatvan",
+      "salary": "834",
+      "id": 11
+    }
+  ],
+  "ranks": []
+}
