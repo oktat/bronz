@@ -62,16 +62,16 @@ var renderTable = (employees) => {
         let tdCity = document.createElement('td');
         let tdSalary = document.createElement('td');
         let tdButton = document.createElement('td');
-        let btnEdit = document.createElement('button');
-        setBtnEdit(btnEdit, employee);
-        let btnDel = document.createElement('button');
-        setBtnDel(btnDel, employee.id)
+        let editButton = document.createElement('button');
+        setEditButton(editButton, employee);
+        let delButton = document.createElement('button');
+        setDelButton(delButton, employee.id)
         tdId.textContent = employee.id;
         tdName.textContent = employee.name;
         tdCity.textContent = employee.city;
         tdSalary.textContent = employee.salary;
-        tdButton.appendChild(btnEdit);
-        tdButton.appendChild(btnDel);
+        tdButton.appendChild(editButton);
+        tdButton.appendChild(delButton);
         tr.appendChild(tdId);
         tr.appendChild(tdName);
         tr.appendChild(tdCity);
@@ -82,35 +82,35 @@ var renderTable = (employees) => {
     });
 };
 
-var setBtnEdit = (btnEdit, employee) => {
-    btnEdit.classList.add('btn');
-    btnEdit.classList.add('btn-info');
-    btnEdit.setAttribute('data-empid', employee.id);
-    btnEdit.setAttribute('data-empname', employee.name);
-    btnEdit.setAttribute('data-empcity', employee.city);
-    btnEdit.setAttribute('data-empsalary', employee.salary);
-    btnEdit.textContent = 'Szerkesztés';
-    btnEdit.setAttribute('data-bs-toggle', 'modal');
-    btnEdit.setAttribute('data-bs-target', '#editModal');
-    btnEdit.addEventListener('click', () => {
-        edited_idElem.value = btnEdit.dataset.empid;
-        edited_nameElem.value = btnEdit.dataset.empname;
-        edited_cityElem.value = btnEdit.dataset.empcity;
-        edited_salaryElem.value = btnEdit.dataset.empsalary;
-        actualTr = btnEdit.parentElement.parentElement;
+var setEditButton = (editButton, employee) => {
+    editButton.classList.add('btn');
+    editButton.classList.add('btn-info');
+    editButton.setAttribute('data-empid', employee.id);
+    editButton.setAttribute('data-empname', employee.name);
+    editButton.setAttribute('data-empcity', employee.city);
+    editButton.setAttribute('data-empsalary', employee.salary);
+    editButton.textContent = 'Szerkesztés';
+    editButton.setAttribute('data-bs-toggle', 'modal');
+    editButton.setAttribute('data-bs-target', '#editModal');
+    editButton.addEventListener('click', () => {
+        edited_idElem.value = editButton.dataset.empid;
+        edited_nameElem.value = editButton.dataset.empname;
+        edited_cityElem.value = editButton.dataset.empcity;
+        edited_salaryElem.value = editButton.dataset.empsalary;
+        actualTr = editButton.parentElement.parentElement;
     });
 };
 
-var setBtnDel = (btnDel, id) => {
-    btnDel.classList.add('btn');
-    btnDel.classList.add('btn-info');
-    btnDel.classList.add('ms-1');
-    btnDel.textContent = 'Törlés'
-    btnDel.addEventListener('click', () => {
+var setDelButton = (delButton, id) => {
+    delButton.classList.add('btn');
+    delButton.classList.add('btn-info');
+    delButton.classList.add('ms-1');
+    delButton.textContent = 'Törlés'
+    delButton.addEventListener('click', () => {
         var ans = confirm('Biztosan törlöd');
         if (ans) {
             deleteEmployee(id);
-            actualTr = btnDel.parentElement.parentElement;
+            actualTr = delButton.parentElement.parentElement;
             actualTr.parentNode.removeChild(actualTr);
         }        
     });    
@@ -173,12 +173,12 @@ var addEmpoyeToTable = employee => {
     tdCity.textContent = employee.city;
     tdSalary.textContent = employee.salary;
     
-    let btnEdit = document.createElement('button');
-    let btnDel = document.createElement('button');
-    tdButton.appendChild(btnEdit);
-    tdButton.appendChild(btnDel);
-    setBtnEdit(btnEdit, employee);
-    setBtnDel(btnDel, employee);
+    let editButton = document.createElement('button');
+    let delButton = document.createElement('button');
+    tdButton.appendChild(editButton);
+    tdButton.appendChild(delButton);
+    setEditButton(editButton, employee);
+    setDelButton(delButton, employee);
     
     tr.appendChild(tdId);
     tr.appendChild(tdName);
